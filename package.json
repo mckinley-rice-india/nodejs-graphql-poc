@@ -4,6 +4,7 @@
   "description": "GraphQL POC with NodeJS",
   "main": "index.js",
   "scripts": {
+    "start": "node .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Mukul Shakya",

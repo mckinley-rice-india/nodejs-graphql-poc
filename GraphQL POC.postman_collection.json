@@ -1,0 +1,1204 @@
+{
+	"info": {
+		"_postman_id": "61191986-54c0-4c97-bb93-97667ff5a619",
+		"name": "GraphQL POC",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "User list",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmN2YwMWJiZDYxMzY5MDdjNzg1ZjI0MiIsImVtYWlsIjoibXVrdWxAZ21haWwuY29tIiwidXNlcm5hbWUiOiJ1c2VyLXJxcm9uYTYydGhqIiwiaWF0IjoxNjAyMjM4OTM5LCJleHAiOjE2MDIyNDA3Mzl9.fiTgQRdgkLpEhzPwIgqEyVSFZoGGpln-HhYWTXg_5wI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "{\n    users {\n        id\n        username\n        email\n        posts {\n            id\n            body\n            comments { \n                id\n                comment \n                user { \n                    id\n                    username \n                }\n            }\n        }\n    }\n}\n",
+								"variables": ""
+							},
+							"options": {
+								"graphql": {}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "User list",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmN2YwMWJiZDYxMzY5MDdjNzg1ZjI0MiIsImVtYWlsIjoibXVrdWxAZ21haWwuY29tIiwidXNlcm5hbWUiOiJ1c2VyLXJxcm9uYTYydGhqIiwiaWF0IjoxNjAyMjQwOTk5LCJleHAiOjE2MDIyNDI3OTl9.9n8tT5AI8iTKG61w_PwP43EtaKTIxbMEn9kclPpEGeA",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "{\n    users {\n        id\n        username\n        email\n        posts {\n            id\n            body\n            comments { \n                id\n                comment \n                user { \n                    id\n                    username \n                }\n            }\n        }\n    }\n}\n",
+										"variables": ""
+									},
+									"options": {
+										"graphql": {}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:4000/graphql",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"graphql"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "768"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"300-568k1Feak0TqL6m2XH98LXUw77U\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 09 Oct 2020 10:56:58 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"users\": [\n            {\n                \"id\": \"5f7f01bbd6136907c785f242\",\n                \"username\": \"user-rqrona62thj\",\n                \"email\": \"mukul@gmail.com\",\n                \"posts\": [\n                    {\n                        \"id\": \"5f7f13ac0bd1c562e0431522\",\n                        \"body\": \"hello  ehloo\",\n                        \"comments\": [\n                            {\n                                \"id\": \"5f8039f1743ec446b34b0926\",\n                                \"comment\": \"random comment\",\n                                \"user\": {\n                                    \"id\": \"5f7f01bbd6136907c785f242\",\n                                    \"username\": \"user-rqrona62thj\"\n                                }\n                            },\n                            {\n                                \"id\": \"5f803a6c743ec446b34b0927\",\n                                \"comment\": \"random comment\",\n                                \"user\": {\n                                    \"id\": \"5f7f01bbd6136907c785f242\",\n                                    \"username\": \"user-rqrona62thj\"\n                                }\n                            }\n                        ]\n                    },\n                    {\n                        \"id\": \"5f7f13d6e1f461639fb1694a\",\n                        \"body\": \"hello  ehloo\",\n                        \"comments\": []\n                    },\n                    {\n                        \"id\": \"5f7f13dee1f461639fb1694b\",\n                        \"body\": \"hello  ehloo\",\n                        \"comments\": []\n                    },\n                    {\n                        \"id\": \"5f803b2cce26fa4908fb3eb1\",\n                        \"body\": \"hi! this is post content\",\n                        \"comments\": []\n                    }\n                ]\n            },\n            {\n                \"id\": \"5f803bc302b1f049c6294eb7\",\n                \"username\": \"mukul1\",\n                \"email\": \"mukul1@gmail.com\",\n                \"posts\": []\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "User by id",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmN2YwMWJiZDYxMzY5MDdjNzg1ZjI0MiIsImVtYWlsIjoibXVrdWxAZ21haWwuY29tIiwidXNlcm5hbWUiOiJ1c2VyLXJxcm9uYTYydGhqIiwiaWF0IjoxNjAyMjQwOTk5LCJleHAiOjE2MDIyNDI3OTl9.9n8tT5AI8iTKG61w_PwP43EtaKTIxbMEn9kclPpEGeA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "{\n    user(id: \"5f7f01bbd6136907c785f242\") {\n        id\n        username\n        email\n        posts {\n            id\n            body\n            comments { \n                id\n                comment \n                user { \n                    id\n                    username \n                }\n            }\n        }\n    }\n}\n",
+								"variables": ""
+							},
+							"options": {
+								"graphql": {}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "User by id",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmN2YwMWJiZDYxMzY5MDdjNzg1ZjI0MiIsImVtYWlsIjoibXVrdWxAZ21haWwuY29tIiwidXNlcm5hbWUiOiJ1c2VyLXJxcm9uYTYydGhqIiwiaWF0IjoxNjAyMjQwOTk5LCJleHAiOjE2MDIyNDI3OTl9.9n8tT5AI8iTKG61w_PwP43EtaKTIxbMEn9kclPpEGeA",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "{\n    user(id: \"5f7f01bbd6136907c785f242\") {\n        id\n        username\n        email\n        posts {\n            id\n            body\n            comments { \n                id\n                comment \n                user { \n                    id\n                    username \n                }\n            }\n        }\n    }\n}\n",
+										"variables": ""
+									},
+									"options": {
+										"graphql": {}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:4000/graphql",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"graphql"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "673"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2a1-32rszyWLgkDvqMRBAqmfekuTlhg\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 09 Oct 2020 10:57:57 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"user\": {\n            \"id\": \"5f7f01bbd6136907c785f242\",\n            \"username\": \"user-rqrona62thj\",\n            \"email\": \"mukul@gmail.com\",\n            \"posts\": [\n                {\n                    \"id\": \"5f7f13ac0bd1c562e0431522\",\n                    \"body\": \"hello  ehloo\",\n                    \"comments\": [\n                        {\n                            \"id\": \"5f8039f1743ec446b34b0926\",\n                            \"comment\": \"random comment\",\n                            \"user\": {\n                                \"id\": \"5f7f01bbd6136907c785f242\",\n                                \"username\": \"user-rqrona62thj\"\n                            }\n                        },\n                        {\n                            \"id\": \"5f803a6c743ec446b34b0927\",\n                            \"comment\": \"random comment\",\n                            \"user\": {\n                                \"id\": \"5f7f01bbd6136907c785f242\",\n                                \"username\": \"user-rqrona62thj\"\n                            }\n                        }\n                    ]\n                },\n                {\n                    \"id\": \"5f7f13d6e1f461639fb1694a\",\n                    \"body\": \"hello  ehloo\",\n                    \"comments\": []\n                },\n                {\n                    \"id\": \"5f7f13dee1f461639fb1694b\",\n                    \"body\": \"hello  ehloo\",\n                    \"comments\": []\n                },\n                {\n                    \"id\": \"5f803b2cce26fa4908fb3eb1\",\n                    \"body\": \"hi! this is post content\",\n                    \"comments\": []\n                }\n            ]\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Sign Up",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmN2YwMWJiZDYxMzY5MDdjNzg1ZjI0MiIsImVtYWlsIjoibXVrdWxAZ21haWwuY29tIiwidXNlcm5hbWUiOiJ1c2VyLXJxcm9uYTYydGhqIiwiaWF0IjoxNjAyMjM4OTM5LCJleHAiOjE2MDIyNDA3Mzl9.fiTgQRdgkLpEhzPwIgqEyVSFZoGGpln-HhYWTXg_5wI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation {\n    signUp(email: \"mukul1@gmail.com\" username: \"mukul1\" password: \"Aa123456\") {\n       token\n       user { id username email }\n    }\n}\n",
+								"variables": ""
+							},
+							"options": {
+								"graphql": {}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Sign Up",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmN2YwMWJiZDYxMzY5MDdjNzg1ZjI0MiIsImVtYWlsIjoibXVrdWxAZ21haWwuY29tIiwidXNlcm5hbWUiOiJ1c2VyLXJxcm9uYTYydGhqIiwiaWF0IjoxNjAyMjM4OTM5LCJleHAiOjE2MDIyNDA3Mzl9.fiTgQRdgkLpEhzPwIgqEyVSFZoGGpln-HhYWTXg_5wI",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "mutation {\n    signUp(email: \"mukul1@gmail.com\" username: \"mukul1\" password: \"Aa123456\") {\n       token\n       user { id username email }\n    }\n}\n",
+										"variables": ""
+									}
+								},
+								"url": {
+									"raw": "http://localhost:4000/graphql",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"graphql"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "354"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"162-GbEBL/cduleTykbTHIkfMnyyJqI\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 09 Oct 2020 10:30:27 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"signUp\": {\n            \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmODAzYmMzMDJiMWYwNDljNjI5NGViNyIsImVtYWlsIjoibXVrdWwxQGdtYWlsLmNvbSIsInVzZXJuYW1lIjoibXVrdWwxIiwiaWF0IjoxNjAyMjM5NDI3LCJleHAiOjE2MDQ4MzE0Mjd9.3pGXxfD_JP-C8Ahtz4VCOXwXDhKNClnvnATVBHLpPTs\",\n            \"user\": {\n                \"id\": \"5f803bc302b1f049c6294eb7\",\n                \"username\": \"mukul1\",\n                \"email\": \"mukul1@gmail.com\"\n            }\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Sign In",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmN2YwMWJiZDYxMzY5MDdjNzg1ZjI0MiIsImVtYWlsIjoibXVrdWxAZ21haWwuY29tIiwidXNlcm5hbWUiOiJ1c2VyLXJxcm9uYTYydGhqIiwiaWF0IjoxNjAyMjM4OTM5LCJleHAiOjE2MDIyNDA3Mzl9.fiTgQRdgkLpEhzPwIgqEyVSFZoGGpln-HhYWTXg_5wI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation {\n    signIn(email: \"mukul1@gmail.com\" password: \"Aa123456\") {\n       token\n       user { id username email }\n    }\n}\n",
+								"variables": ""
+							},
+							"options": {
+								"graphql": {}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Sign In",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmN2YwMWJiZDYxMzY5MDdjNzg1ZjI0MiIsImVtYWlsIjoibXVrdWxAZ21haWwuY29tIiwidXNlcm5hbWUiOiJ1c2VyLXJxcm9uYTYydGhqIiwiaWF0IjoxNjAyMjM4OTM5LCJleHAiOjE2MDIyNDA3Mzl9.fiTgQRdgkLpEhzPwIgqEyVSFZoGGpln-HhYWTXg_5wI",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "mutation {\n    signIn(email: \"mukul1@gmail.com\" password: \"Aa123456\") {\n       token\n       user { id username email }\n    }\n}\n",
+										"variables": ""
+									}
+								},
+								"url": {
+									"raw": "http://localhost:4000/graphql",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"graphql"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "354"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"162-W1sKpZhAKdoBsCSVlVKv55axs6c\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 09 Oct 2020 10:31:21 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"signIn\": {\n            \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmODAzYmMzMDJiMWYwNDljNjI5NGViNyIsImVtYWlsIjoibXVrdWwxQGdtYWlsLmNvbSIsInVzZXJuYW1lIjoibXVrdWwxIiwiaWF0IjoxNjAyMjM5NDgxLCJleHAiOjE2MDIyNDEyODF9.V2E6OsJEgvkUgkMGg4JctaGnWdnZOoxXP3hVMxLIY1c\",\n            \"user\": {\n                \"id\": \"5f803bc302b1f049c6294eb7\",\n                \"username\": \"mukul1\",\n                \"email\": \"mukul1@gmail.com\"\n            }\n        }\n    }\n}"
+						}
+					]
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Post",
+			"item": [
+				{
+					"name": "Create a post",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmN2YwMWJiZDYxMzY5MDdjNzg1ZjI0MiIsImVtYWlsIjoibXVrdWxAZ21haWwuY29tIiwidXNlcm5hbWUiOiJ1c2VyLXJxcm9uYTYydGhqIiwiaWF0IjoxNjAyMjM4OTM5LCJleHAiOjE2MDIyNDA3Mzl9.fiTgQRdgkLpEhzPwIgqEyVSFZoGGpln-HhYWTXg_5wI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation {\n    createPost(body: \"Hi! this is post content\") {\n        id\n        body\n        comments { comment }\n        user { username }\n    }\n}\n",
+								"variables": ""
+							},
+							"options": {
+								"graphql": {}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create a post",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmN2YwMWJiZDYxMzY5MDdjNzg1ZjI0MiIsImVtYWlsIjoibXVrdWxAZ21haWwuY29tIiwidXNlcm5hbWUiOiJ1c2VyLXJxcm9uYTYydGhqIiwiaWF0IjoxNjAyMjM4OTM5LCJleHAiOjE2MDIyNDA3Mzl9.fiTgQRdgkLpEhzPwIgqEyVSFZoGGpln-HhYWTXg_5wI",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "mutation {\n    createPost(body: \"Hi! this is post content\") {\n        id\n        body\n        comments { comment }\n        user { username }\n    }\n}\n",
+										"variables": ""
+									}
+								},
+								"url": {
+									"raw": "http://localhost:4000/graphql",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"graphql"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "145"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"91-Khn2azx/eeq56J6xwXN4gkpVBzM\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 09 Oct 2020 10:27:56 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"createPost\": {\n            \"id\": \"5f803b2cce26fa4908fb3eb1\",\n            \"body\": \"hi! this is post content\",\n            \"comments\": [],\n            \"user\": {\n                \"username\": \"user-rqrona62thj\"\n            }\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get all posts",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmN2YwMWJiZDYxMzY5MDdjNzg1ZjI0MiIsImVtYWlsIjoibXVrdWxAZ21haWwuY29tIiwidXNlcm5hbWUiOiJ1c2VyLXJxcm9uYTYydGhqIiwiaWF0IjoxNjAyMjQwOTk5LCJleHAiOjE2MDIyNDI3OTl9.9n8tT5AI8iTKG61w_PwP43EtaKTIxbMEn9kclPpEGeA"
+							}
+						],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "{\n    posts {\n        id\n        body\n        user {\n            id\n            username\n        }\n        comments { \n            id\n            comment \n            user { \n                id\n                username \n            }\n        }\n    }\n}\n\n",
+								"variables": ""
+							},
+							"options": {
+								"graphql": {}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get all posts",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmN2YwMWJiZDYxMzY5MDdjNzg1ZjI0MiIsImVtYWlsIjoibXVrdWxAZ21haWwuY29tIiwidXNlcm5hbWUiOiJ1c2VyLXJxcm9uYTYydGhqIiwiaWF0IjoxNjAyMjQwOTk5LCJleHAiOjE2MDIyNDI3OTl9.9n8tT5AI8iTKG61w_PwP43EtaKTIxbMEn9kclPpEGeA"
+									}
+								],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "{\n    posts {\n        id\n        body\n        user {\n            id\n            username\n        }\n        comments { \n            id\n            comment \n            user { \n                id\n                username \n            }\n        }\n    }\n}\n\n",
+										"variables": ""
+									},
+									"options": {
+										"graphql": {}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:4000/graphql",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"graphql"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "860"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"35c-egeiQZ5nBsiy+huReZhMzKppzT8\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 09 Oct 2020 11:00:29 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"posts\": [\n            {\n                \"id\": \"5f7f13ac0bd1c562e0431522\",\n                \"body\": \"hello  ehloo\",\n                \"user\": {\n                    \"id\": \"5f7f01bbd6136907c785f242\",\n                    \"username\": \"user-rqrona62thj\"\n                },\n                \"comments\": [\n                    {\n                        \"id\": \"5f8039f1743ec446b34b0926\",\n                        \"comment\": \"random comment\",\n                        \"user\": {\n                            \"id\": \"5f7f01bbd6136907c785f242\",\n                            \"username\": \"user-rqrona62thj\"\n                        }\n                    },\n                    {\n                        \"id\": \"5f803a6c743ec446b34b0927\",\n                        \"comment\": \"random comment\",\n                        \"user\": {\n                            \"id\": \"5f7f01bbd6136907c785f242\",\n                            \"username\": \"user-rqrona62thj\"\n                        }\n                    }\n                ]\n            },\n            {\n                \"id\": \"5f7f13d6e1f461639fb1694a\",\n                \"body\": \"hello  ehloo\",\n                \"user\": {\n                    \"id\": \"5f7f01bbd6136907c785f242\",\n                    \"username\": \"user-rqrona62thj\"\n                },\n                \"comments\": []\n            },\n            {\n                \"id\": \"5f7f13dee1f461639fb1694b\",\n                \"body\": \"hello  ehloo\",\n                \"user\": {\n                    \"id\": \"5f7f01bbd6136907c785f242\",\n                    \"username\": \"user-rqrona62thj\"\n                },\n                \"comments\": []\n            },\n            {\n                \"id\": \"5f803b2cce26fa4908fb3eb1\",\n                \"body\": \"hi! this is post content\",\n                \"user\": {\n                    \"id\": \"5f7f01bbd6136907c785f242\",\n                    \"username\": \"user-rqrona62thj\"\n                },\n                \"comments\": []\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get posts by user id",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmN2YwMWJiZDYxMzY5MDdjNzg1ZjI0MiIsImVtYWlsIjoibXVrdWxAZ21haWwuY29tIiwidXNlcm5hbWUiOiJ1c2VyLXJxcm9uYTYydGhqIiwiaWF0IjoxNjAyMjQwOTk5LCJleHAiOjE2MDIyNDI3OTl9.9n8tT5AI8iTKG61w_PwP43EtaKTIxbMEn9kclPpEGeA"
+							}
+						],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "{\n    posts(userId: \"5f7f01bbd6136907c785f242\") {\n        id\n        body\n        user {\n            id\n            username\n        }\n        comments { \n            id\n            comment \n            user { \n                id\n                username \n            }\n        }\n    }\n}\n\n",
+								"variables": ""
+							},
+							"options": {
+								"graphql": {}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get posts by user id",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmN2YwMWJiZDYxMzY5MDdjNzg1ZjI0MiIsImVtYWlsIjoibXVrdWxAZ21haWwuY29tIiwidXNlcm5hbWUiOiJ1c2VyLXJxcm9uYTYydGhqIiwiaWF0IjoxNjAyMjQwOTk5LCJleHAiOjE2MDIyNDI3OTl9.9n8tT5AI8iTKG61w_PwP43EtaKTIxbMEn9kclPpEGeA"
+									}
+								],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "{\n    posts(userId: \"5f7f01bbd6136907c785f242\") {\n        id\n        body\n        user {\n            id\n            username\n        }\n        comments { \n            id\n            comment \n            user { \n                id\n                username \n            }\n        }\n    }\n}\n\n",
+										"variables": ""
+									},
+									"options": {
+										"graphql": {}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:4000/graphql",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"graphql"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "860"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"35c-egeiQZ5nBsiy+huReZhMzKppzT8\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 09 Oct 2020 11:01:15 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"posts\": [\n            {\n                \"id\": \"5f7f13ac0bd1c562e0431522\",\n                \"body\": \"hello  ehloo\",\n                \"user\": {\n                    \"id\": \"5f7f01bbd6136907c785f242\",\n                    \"username\": \"user-rqrona62thj\"\n                },\n                \"comments\": [\n                    {\n                        \"id\": \"5f8039f1743ec446b34b0926\",\n                        \"comment\": \"random comment\",\n                        \"user\": {\n                            \"id\": \"5f7f01bbd6136907c785f242\",\n                            \"username\": \"user-rqrona62thj\"\n                        }\n                    },\n                    {\n                        \"id\": \"5f803a6c743ec446b34b0927\",\n                        \"comment\": \"random comment\",\n                        \"user\": {\n                            \"id\": \"5f7f01bbd6136907c785f242\",\n                            \"username\": \"user-rqrona62thj\"\n                        }\n                    }\n                ]\n            },\n            {\n                \"id\": \"5f7f13d6e1f461639fb1694a\",\n                \"body\": \"hello  ehloo\",\n                \"user\": {\n                    \"id\": \"5f7f01bbd6136907c785f242\",\n                    \"username\": \"user-rqrona62thj\"\n                },\n                \"comments\": []\n            },\n            {\n                \"id\": \"5f7f13dee1f461639fb1694b\",\n                \"body\": \"hello  ehloo\",\n                \"user\": {\n                    \"id\": \"5f7f01bbd6136907c785f242\",\n                    \"username\": \"user-rqrona62thj\"\n                },\n                \"comments\": []\n            },\n            {\n                \"id\": \"5f803b2cce26fa4908fb3eb1\",\n                \"body\": \"hi! this is post content\",\n                \"user\": {\n                    \"id\": \"5f7f01bbd6136907c785f242\",\n                    \"username\": \"user-rqrona62thj\"\n                },\n                \"comments\": []\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get posts by id",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmN2YwMWJiZDYxMzY5MDdjNzg1ZjI0MiIsImVtYWlsIjoibXVrdWxAZ21haWwuY29tIiwidXNlcm5hbWUiOiJ1c2VyLXJxcm9uYTYydGhqIiwiaWF0IjoxNjAyMjQwOTk5LCJleHAiOjE2MDIyNDI3OTl9.9n8tT5AI8iTKG61w_PwP43EtaKTIxbMEn9kclPpEGeA"
+							}
+						],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "{\n    post(id: \"5f7f13ac0bd1c562e0431522\") {\n        id\n        body\n        user {\n            id\n            username\n        }\n        comments { \n            id\n            comment \n            user { \n                id\n                username \n            }\n        }\n    }\n}\n\n",
+								"variables": ""
+							},
+							"options": {
+								"graphql": {}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get posts by id",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmN2YwMWJiZDYxMzY5MDdjNzg1ZjI0MiIsImVtYWlsIjoibXVrdWxAZ21haWwuY29tIiwidXNlcm5hbWUiOiJ1c2VyLXJxcm9uYTYydGhqIiwiaWF0IjoxNjAyMjQwOTk5LCJleHAiOjE2MDIyNDI3OTl9.9n8tT5AI8iTKG61w_PwP43EtaKTIxbMEn9kclPpEGeA"
+									}
+								],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "{\n    post(id: \"5f7f13ac0bd1c562e0431522\") {\n        id\n        body\n        user {\n            id\n            username\n        }\n        comments { \n            id\n            comment \n            user { \n                id\n                username \n            }\n        }\n    }\n}\n\n",
+										"variables": ""
+									},
+									"options": {
+										"graphql": {}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:4000/graphql",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"graphql"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "422"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1a6-IMTtuXFq2tgjQrlhtPZyeKrStiE\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 09 Oct 2020 11:03:25 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"post\": {\n            \"id\": \"5f7f13ac0bd1c562e0431522\",\n            \"body\": \"hello  ehloo\",\n            \"user\": {\n                \"id\": \"5f7f01bbd6136907c785f242\",\n                \"username\": \"user-rqrona62thj\"\n            },\n            \"comments\": [\n                {\n                    \"id\": \"5f8039f1743ec446b34b0926\",\n                    \"comment\": \"random comment\",\n                    \"user\": {\n                        \"id\": \"5f7f01bbd6136907c785f242\",\n                        \"username\": \"user-rqrona62thj\"\n                    }\n                },\n                {\n                    \"id\": \"5f803a6c743ec446b34b0927\",\n                    \"comment\": \"random comment\",\n                    \"user\": {\n                        \"id\": \"5f7f01bbd6136907c785f242\",\n                        \"username\": \"user-rqrona62thj\"\n                    }\n                }\n            ]\n        }\n    }\n}"
+						}
+					]
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Comment",
+			"item": [
+				{
+					"name": "Create a comment",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmN2YwMWJiZDYxMzY5MDdjNzg1ZjI0MiIsImVtYWlsIjoibXVrdWxAZ21haWwuY29tIiwidXNlcm5hbWUiOiJ1c2VyLXJxcm9uYTYydGhqIiwiaWF0IjoxNjAyMjM4OTM5LCJleHAiOjE2MDIyNDA3Mzl9.fiTgQRdgkLpEhzPwIgqEyVSFZoGGpln-HhYWTXg_5wI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation {\n    createComment(comment: \"random comment\", postId: \"5f7f13ac0bd1c562e0431522\") {\n        comment\n        user { username }\n        post { body }\n    }\n}\n",
+								"variables": ""
+							},
+							"options": {
+								"graphql": {}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create a comment",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmN2YwMWJiZDYxMzY5MDdjNzg1ZjI0MiIsImVtYWlsIjoibXVrdWxAZ21haWwuY29tIiwidXNlcm5hbWUiOiJ1c2VyLXJxcm9uYTYydGhqIiwiaWF0IjoxNjAyMjM4OTM5LCJleHAiOjE2MDIyNDA3Mzl9.fiTgQRdgkLpEhzPwIgqEyVSFZoGGpln-HhYWTXg_5wI",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "mutation {\n    createComment(comment: \"random comment\", postId: \"5f7f13ac0bd1c562e0431522\") {\n        comment\n        user { username }\n        post { body }\n    }\n}\n",
+										"variables": ""
+									}
+								},
+								"url": {
+									"raw": "http://localhost:4000/graphql",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"graphql"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "126"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"7e-OxNR6wL6UglV7/r0b23zi/ut7sE\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 09 Oct 2020 10:24:44 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"createComment\": {\n            \"comment\": \"random comment\",\n            \"user\": {\n                \"username\": \"user-rqrona62thj\"\n            },\n            \"post\": {\n                \"body\": \"hello  ehloo\"\n            }\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get comments on a post",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmN2YwMWJiZDYxMzY5MDdjNzg1ZjI0MiIsImVtYWlsIjoibXVrdWxAZ21haWwuY29tIiwidXNlcm5hbWUiOiJ1c2VyLXJxcm9uYTYydGhqIiwiaWF0IjoxNjAyMjQwOTk5LCJleHAiOjE2MDIyNDI3OTl9.9n8tT5AI8iTKG61w_PwP43EtaKTIxbMEn9kclPpEGeA"
+							}
+						],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "{\n    comments(postId: \"5f7f13ac0bd1c562e0431522\") { \n        id\n        comment \n        user { \n            id\n            username \n        }\n    }\n}\n\n\n",
+								"variables": ""
+							},
+							"options": {
+								"graphql": {}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get comments on a post",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmN2YwMWJiZDYxMzY5MDdjNzg1ZjI0MiIsImVtYWlsIjoibXVrdWxAZ21haWwuY29tIiwidXNlcm5hbWUiOiJ1c2VyLXJxcm9uYTYydGhqIiwiaWF0IjoxNjAyMjQwOTk5LCJleHAiOjE2MDIyNDI3OTl9.9n8tT5AI8iTKG61w_PwP43EtaKTIxbMEn9kclPpEGeA"
+									}
+								],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "{\n    comments(postId: \"5f7f13ac0bd1c562e0431522\") { \n        id\n        comment \n        user { \n            id\n            username \n        }\n    }\n}\n\n\n",
+										"variables": ""
+									},
+									"options": {
+										"graphql": {}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:4000/graphql",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"graphql"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "288"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"120-HK6mkiyss32ncRhsij40pNxPTII\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 09 Oct 2020 11:05:40 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"comments\": [\n            {\n                \"id\": \"5f8039f1743ec446b34b0926\",\n                \"comment\": \"random comment\",\n                \"user\": {\n                    \"id\": \"5f7f01bbd6136907c785f242\",\n                    \"username\": \"user-rqrona62thj\"\n                }\n            },\n            {\n                \"id\": \"5f803a6c743ec446b34b0927\",\n                \"comment\": \"random comment\",\n                \"user\": {\n                    \"id\": \"5f7f01bbd6136907c785f242\",\n                    \"username\": \"user-rqrona62thj\"\n                }\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get comment by id",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmN2YwMWJiZDYxMzY5MDdjNzg1ZjI0MiIsImVtYWlsIjoibXVrdWxAZ21haWwuY29tIiwidXNlcm5hbWUiOiJ1c2VyLXJxcm9uYTYydGhqIiwiaWF0IjoxNjAyMjQwOTk5LCJleHAiOjE2MDIyNDI3OTl9.9n8tT5AI8iTKG61w_PwP43EtaKTIxbMEn9kclPpEGeA"
+							}
+						],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "{\n    comment(id: \"5f8039f1743ec446b34b0926\") { \n        id\n        comment \n        user { \n            id\n            username \n        }\n        post {\n            id\n            body\n            user {\n                id\n                username\n            }\n        }\n    }\n}\n\n\n",
+								"variables": ""
+							},
+							"options": {
+								"graphql": {}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get comment by id",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmN2YwMWJiZDYxMzY5MDdjNzg1ZjI0MiIsImVtYWlsIjoibXVrdWxAZ21haWwuY29tIiwidXNlcm5hbWUiOiJ1c2VyLXJxcm9uYTYydGhqIiwiaWF0IjoxNjAyMjQwOTk5LCJleHAiOjE2MDIyNDI3OTl9.9n8tT5AI8iTKG61w_PwP43EtaKTIxbMEn9kclPpEGeA"
+									}
+								],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "{\n    comment(id: \"5f8039f1743ec446b34b0926\") { \n        id\n        comment \n        user { \n            id\n            username \n        }\n        post {\n            id\n            body\n            user {\n                id\n                username\n            }\n        }\n    }\n}\n\n\n",
+										"variables": ""
+									},
+									"options": {
+										"graphql": {}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:4000/graphql",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"graphql"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "287"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"11f-MQWP3T/Nfm2qJj/C+EqNOOaNiGI\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 09 Oct 2020 11:07:11 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"comment\": {\n            \"id\": \"5f8039f1743ec446b34b0926\",\n            \"comment\": \"random comment\",\n            \"user\": {\n                \"id\": \"5f7f01bbd6136907c785f242\",\n                \"username\": \"user-rqrona62thj\"\n            },\n            \"post\": {\n                \"id\": \"5f7f13ac0bd1c562e0431522\",\n                \"body\": \"hello  ehloo\",\n                \"user\": {\n                    \"id\": \"5f7f01bbd6136907c785f242\",\n                    \"username\": \"user-rqrona62thj\"\n                }\n            }\n        }\n    }\n}"
+						}
+					]
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

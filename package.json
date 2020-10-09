@@ -1,0 +1,28 @@
+{
+  "name": "nodejs-graphql-poc",
+  "version": "1.0.0",
+  "description": "GraphQL POC with NodeJS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mukul Shakya",
+  "license": "ISC",
+  "dependencies": {
+    "@hapi/joi": "^17.1.1",
+    "apollo-server": "^2.18.2",
+    "apollo-server-core": "^2.18.2",
+    "apollo-server-express": "^2.18.2",
+    "bcrypt": "^5.0.0",
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-graphql": "^0.11.0",
+    "graphql": "^15.3.0",
+    "graphql-resolvers": "^0.4.2",
+    "graphql-tools": "^6.2.4",
+    "joi-objectid": "^3.0.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.10.8"
+  }
+}
